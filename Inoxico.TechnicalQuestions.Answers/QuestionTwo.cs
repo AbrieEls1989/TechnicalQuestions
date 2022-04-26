@@ -12,7 +12,7 @@ namespace Inoxico.TechnicalQuestions.Answers
             int R = -1;
 
             //Loop through int array
-            for (int i = 0; i < points.Length; i++)
+            for (int i = 1; i < points.Length; i++)
             {
 
                 if (Q < 0 && points[i] >= points[i - 1])
