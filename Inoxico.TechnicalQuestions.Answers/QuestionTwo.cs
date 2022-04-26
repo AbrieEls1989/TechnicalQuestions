@@ -20,7 +20,7 @@ namespace Inoxico.TechnicalQuestions.Answers
                     Q = i - 1;
                 }
 
-                if ((Q >= 0 && R < 0))
+                if ((Q >= 0 && R < 0) && (points[i] <= points[i - 1] || i +1 == points.Length))
                 {
 
                     if (points[i] <= points[i - 1])
@@ -31,7 +31,10 @@ namespace Inoxico.TechnicalQuestions.Answers
                     {
                         R = i;
                     }
-
+                    //Getting max depth 
+                    depth = Math.Max(depth, Math.Min(points[P] - points[Q],points[R]- points[Q]));
+                    P = i - 1;
+                    Q = R = -1;
 
                 }
 
