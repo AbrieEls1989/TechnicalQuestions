@@ -14,9 +14,17 @@ namespace Inoxico.TechnicalQuestions.Answers
             for (int i = 0; i < points.Length; i++)
             {
 
+                if (Q < 0 && points[i] >= points[i - 1])
+                { 
+                }
+
+            }
+            if(depth == 0)
+            {
+                depth = -1;
             }
 
-            return 0;
+            return depth;
 
         }
 
