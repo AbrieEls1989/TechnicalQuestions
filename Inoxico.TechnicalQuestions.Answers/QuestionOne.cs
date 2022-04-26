@@ -9,13 +9,15 @@ namespace Inoxico.TechnicalQuestions.Answers
             string[] splitVal = s.Split(".");
 
             int maxValue = 0;
-            foreach(string sValue in splitVal)
+            foreach (string sValue in splitVal)
             {
-                int count = 0;
-                
+                int count = Count(sValue);
+                if (maxValue < count)
+                {
+                    maxValue = count;
+                }
             }
-
-            throw new NotImplementedException();
+            return maxValue;
         }
 
         //Counting all words in sentance.
@@ -23,12 +25,12 @@ namespace Inoxico.TechnicalQuestions.Answers
         {
             int wordCount = 0;
             for (int i = 0; i < sen.Length; i++)
-            {
+
                 if (char.IsWhiteSpace(sen[i]) && !char.IsWhiteSpace(sen[i + 1]) && i > 0)
                     wordCount++;
 
-                return ++wordCount;
-            }
+            return ++wordCount;
+
         }
     }
 }
